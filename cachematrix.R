@@ -6,12 +6,13 @@
 ## R language to preserve the inverse of a matrix so that when we need it again, it can be 
 ## looked up in the cache rather than recomputed. In R, the inverse of a matrix can be obtained 
 ## with function solve().
+##
 
 ## makeCacheMatrix()
 ## This function returns a list that holds the values of variable s, and functions set, get, 
 ## setsolve, and getsolve. 
 ##
-## Sample usage: 
+##  Sample usage: 
 ## Given a variable gk defined as gk <- makeCacheMatrix( matrix (1:4,nrow=2,ncol=2)), the values of  
 ## s, set, get, setsolve and getsolve can be obtained by using: gk$s, gk$get(), gk$set(), or 
 ## gk$getsolve()
@@ -47,7 +48,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## makeCacheMatrix(). The feature that enables performance improvement is the verification of the 
 ## the variable s that holds the inversed matrix. If it was calculated before, then the solve() 
 ## function is not executed.
-## Usage: inv <- cachesolve(gk)
+##  Usage: inv <- cachesolve(gk)
+##
 
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
